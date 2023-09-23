@@ -1,5 +1,5 @@
-Question #2:
-1.  SELECT STUDENT.sname
+## Question #2:
+1. SELECT STUDENT.sname\n
    FROM STUDENT
    JOIN ENROLLED ON STUDENT.snum = ENROLLED.snum
    JOIN CLASS ON ENROLLED.cname = CLASS.cname
