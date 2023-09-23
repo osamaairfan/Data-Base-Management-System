@@ -1,12 +1,12 @@
 Question #2:
-1. SELECT STUDENT.sname
+1.  SELECT STUDENT.sname
    FROM STUDENT
    JOIN ENROLLED ON STUDENT.snum = ENROLLED.snum
    JOIN CLASS ON ENROLLED.cname = CLASS.cname
    JOIN FACULTYON CLASS.fid = FACULTY.fid
    WHERE STUDENT.level = 'JR' AND FACULTY.fname = 'I. Teach';
 
-2. SELECT MAX(STUDENT.age) AS oldest_age
+2.  SELECT MAX(STUDENT.age) AS oldest_age
    FROM STUDENT
    JOIN Enrolled ON STUDENT.snum = Enrolled.snum
    JOIN Class ON Enrolled.cname = Class.name
