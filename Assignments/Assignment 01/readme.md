@@ -24,4 +24,4 @@
    JOIN Class C2 ON E2.cname = C2.name    
    WHERE C1.meets_at = C2.meets_at AND E1.cname <> E2.cname;  
 
-5. 
+5. n
