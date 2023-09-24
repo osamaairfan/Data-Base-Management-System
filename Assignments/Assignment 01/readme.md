@@ -167,7 +167,7 @@
 1. ALTER TABLE Emp   
    ADD CONSTRAINT check_minimum_salary CHECK (salary >= 10000);   
 
-4.DELETE FROM Employees   
+4. DELETE FROM Employees   
    WHERE salary > (   
        SELECT D.salary   
        FROM Department D  
