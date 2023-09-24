@@ -1,3 +1,9 @@
+# Data Base Managment System
+
+### Name: Muhammad Osama Irfan
+### Roll no: 21k-4772
+### Assignment 01
+
 ## Question #02:
 1. SELECT STUDENT.sname    
    FROM STUDENT    
