@@ -1,10 +1,28 @@
 # Data Base Managment System
 
 **Name: Muhammad Osama Irfan**
+
 **Roll no: 21k-4772**
+
 **Assignment 01**
 
----
+## Question #01:
+
+Part 1:
+We use DataBase Systems instead of OS beacause of the following advantages:
+*   Data integrity.
+*   Data accuracy.
+*   Consistent access without conflicts.
+*   Strong security features.
+*   Scalability for growing data and users.
+*   Backup and recovery.
+*   Reduced data redundancy.
+*   Centralized mechanism for data management.
+*   Data history and auditing.
+
+Part 2:
+The responsibilities of a Database Administrator includes designing database schemas, backup and recovery of data, security, performance tuning, scalabiling management, data migration and transformation, patch updates and monitoring etc.
+Understanding the query optimization is essential part for a DBA even if he don't want to run querries itself. Optimizing queries ensures that the database operates efficiently, which indirectly impacts system performance.
 
 ## Question #02:
 1. SELECT STUDENT.sname    
