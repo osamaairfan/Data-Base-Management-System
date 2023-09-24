@@ -8,7 +8,7 @@
 
 ## Question #01:
 
-Part 1:
+Part 1:  
 We use DataBase Systems instead of OS beacause of the following advantages:
 *   Data integrity.
 *   Data accuracy.
@@ -20,9 +20,12 @@ We use DataBase Systems instead of OS beacause of the following advantages:
 *   Centralized mechanism for data management.
 *   Data history and auditing.
 
-Part 2:
+Part 2:   
 The responsibilities of a Database Administrator includes designing database schemas, backup and recovery of data, security, performance tuning, scalabiling management, data migration and transformation, patch updates and monitoring etc.
 Understanding the query optimization is essential part for a DBA even if he don't want to run querries itself. Optimizing queries ensures that the database operates efficiently, which indirectly impacts system performance.
+
+Part 3:  
+The data model plays the most important role in representing real-world information in a database. It is used to describe the external and logical schemas. It also defines the structure, entities, attributes, relationships, and constraints that makes it a real-world model.
 
 ## Question #02:
 1. SELECT STUDENT.sname    
