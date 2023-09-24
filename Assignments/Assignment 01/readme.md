@@ -15,7 +15,7 @@
 
 3. SELECT cname FROM ENROLLED  
    JOIN CLASS ON Student.snum = Enrolled.snum  
-   WHERE cname = ‘R128’ OR snum >= 5  
+   WHERE cname = ‘R128’ OR snum >= 5;  
 
 4. SELECT s.name FROM Student S  
    JOIN Enrolled E1 ON S.snum = E1.snum  
@@ -24,4 +24,44 @@
    JOIN Class C2 ON E2.cname = C2.name    
    WHERE C1.meets_at = C2.meets_at AND E1.cname <> E2.cname;  
 
-5. n
+5. SELECT F.fname
+   FROM Faculty F
+   WHERE NOT EXISTS (
+       SELECT C1.room
+       FROM Class C1
+       WHERE NOT EXISTS (
+           SELECT 1
+           FROM Class C2
+           WHERE C2.room = C1.room
+           AND C2.fid = F.fid
+       )
+   );
+
+6. SELECT F.fname AS FacultyName
+   FROM Faculty F
+   JOIN Class C ON F.fid = C.fid
+   GROUP BY F.fname
+   HAVING COUNT(C.name) < 5;
+
+7. SELECT level, AVG(age) AS AVERAGEAGE
+   FROM STUDENT
+   GROUP BY level;
+
+8. SELECT level, AVG(age) AS AVERAGEAGE
+   FROM STUDENT
+   WHERE level != JR
+   GROUP BY level;
+
+9. SELECT fname, COUNT(C.fid)
+   FROM FACULTY
+   JOIN FACULTY ON F.fid = C.fid
+   GROUP BY fname
+   HAVING C.name = ‘R128’;
+
+10. SELECT sname, COUNT(E.cname)
+    FROM ENROLLED
+    JOIN E.snum = S.snum
+    GROUP BY snum
+    HAVING MAX(snum);
+
+11. 
