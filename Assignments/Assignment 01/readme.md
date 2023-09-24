@@ -1,4 +1,4 @@
-## Question #2:
+## Question #02:
 1. SELECT STUDENT.sname    
    FROM STUDENT    
    JOIN ENROLLED ON STUDENT.snum = ENROLLED.snum     
@@ -75,7 +75,7 @@
     GROUP BY age  
     HAVING MAX(COUNT(snum));  
 
-## Question #3:  
+## Question #03:  
 
 1. SELECT aname  
    FROM Aircraft A  
@@ -162,12 +162,12 @@
     JOIN Aircraft A ON C.aid = A.aid   
     WHERE A.cruisingrange > 1000 AND A.aname LIKE '%Boeing%';  
 
-## Question #4:
+## Question #04:
 
 1. ALTER TABLE Emp   
    ADD CONSTRAINT check_minimum_salary CHECK (salary >= 10000);   
 
-4. DELETE FROM Employees   //part 4
+4. DELETE FROM Employees            // part 4
    WHERE salary > (   
        SELECT D.salary   
        FROM Department D  
