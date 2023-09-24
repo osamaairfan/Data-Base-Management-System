@@ -162,8 +162,24 @@
     JOIN Aircraft A ON C.aid = A.aid   
     WHERE A.cruisingrange > 1000 AND A.aname LIKE '%Boeing%';  
 
+## Question #4:
 
+1. ALTER TABLE Emp
+   ADD CONSTRAINT check_minimum_salary CHECK (salary >= 10000);
 
-
-    
+4.DELETE FROM Employees
+   WHERE salary > (
+       SELECT D.salary
+       FROM Department D
+       WHERE D.did = (
+           SELECT W.did
+           FROM Works W
+           WHERE W.eid = Employees.eid
+       ) AND D.managerid = Emp.eid
+   );
+   DELETE FROM Works
+   WHERE eid NOT IN (SELECT eid FROM Emp);
+   DELETE FROM Emp
+   WHERE eid NOT IN (SELECT eid FROM Works);
+ 
       
