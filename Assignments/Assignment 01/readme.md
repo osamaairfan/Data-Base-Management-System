@@ -91,9 +91,76 @@
 
 3. SELECT ename
    FROM Employees E
-   WHERE salary < (SELECT MIN
+   WHERE salary < (SELECT MIN(price)
+   FROM Flights 
+   WHERE "from" = 'Los Angeles' AND "to" = 'Honolulu');
 
+4. SELECT ename
+   FROM Employees E
+   JOIN Employees ON Certified.eid = E.eid
+   JOIN Certified ON Aircraft.aid = Certified.aid
+   WHERE Aircraft.aname = 'Boeing%'
 
+5. SELECT aid
+   FROM Aircraft A
+   JOIN Flights F ON "from" = 'Los Angeles' AND "to" = 'Chicago';
+
+6. SELECT E.eno, E.ename, F.flno, F.from, F.to
+   FROM Employees E
+   JOIN Certified C ON E.eno = C.eno
+   JOIN Flights F ON C.aid = F.aid
+   WHERE E.salary > 100000
+   GROUP BY E.eno, E.ename, F.flno, F.from, F.to
+   HAVING COUNT(*) = (SELECT COUNT(*)
+   FROM Aircraft);
+
+7. SELECT DISTINCT
+   F1.flno AS flight1,
+   F1.arrives AS arrival1,
+   F2.flno AS flight2,
+   F2.arrives AS arrival2,
+   F3.flno AS flight3,
+   F3.arrives AS arrival3
+   FROM Flights F1
+   JOIN Flights F2 ON F1.to = F2.from
+   JOIN Flights F3 ON F2.to = F3.from
+   WHERE F1.from = 'Madison' AND F3.to = 'New York' AND F3.arrives <= '18:00';
+
+8. SELECT (
+   SELECT AVG(salary)
+    FROM Employees
+    WHERE ename IN (SELECT ename FROM Certified)
+   )
+   (
+    SELECT AVG(salary)
+    FROM Employees
+   ) AS SalaryDifference; 
+
+9. SELECT ename, salary
+   FROM Employees
+   WHERE salary > (SELECT AVG(salary)
+   FROM Employees
+   WHERE ename IN (SELECT ename FROM Certified));
+
+10. SELECT E.ename
+    FROM Employees E
+    JOIN Employees ON C.eid = E.eid
+    JOIN CERTIFIED C ON AIRCRAFT.aid = C.aid
+    WHERE AIRCRAFT.crusingrange > 1000
+
+11. SELECT E.ename
+    FROM Employees E
+    JOIN Certified C ON E.eid = C.eid 
+    JOIN Aircraft A1 ON C.aid = A1.aid 
+    JOIN Certified C2 ON E.eid = C2.eid 
+    JOIN Aircraft A2 ON C2.aid = A2.aid 
+    WHERE A1.crusingrange > 1000 AND A1.aid <> A2.aid ;
+
+12. SELECT E.ename
+    FROM Employees E
+    JOIN Certified C ON E.eid = C.eid   
+    JOIN Aircraft A ON C.aid = A.aid 
+    WHERE A.cruisingrange > 1000 AND A.aname LIKE '%Boeing%';
 
 
 
