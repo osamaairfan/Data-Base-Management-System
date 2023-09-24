@@ -64,4 +64,39 @@
     GROUP BY snum
     HAVING MAX(snum);
 
-11. 
+11. SELECT sname, COUNT(E.cname)
+    FROM ENROLLED
+    JOIN E.snum = E.snum
+    GROUP BY snum
+    HAVING E.sname = NULL;
+
+12. SELECT age, level COUNT(snum)
+    FROM STUDENTS
+    GROUP BY age
+    HAVING MAX(COUNT(snum));
+
+## Question #3:
+
+1. SELECT aname
+   FROM Aircraft A
+   JOIN CERTIFIED ON A.aid = C.aid
+   JOIN EMPLOYEES ON C.eid = E.eid
+   WHERE E.salary > 80000;
+
+2. `SELECT MAX(A.crusingrange), AS maxCruisingRange C.eid
+   FROM Aircraft A
+   JOIN Certified C ON A.aid = C.aid
+   GROUP BY C.eid
+   HAVING COUNT(A.aid) > 3`
+
+3. SELECT ename
+   FROM Employees E
+   WHERE salary < (SELECT MIN
+
+
+
+
+
+
+    
+      
